@@ -17,12 +17,12 @@ Technical Systems that are built on a Hardware and Software are likely **Embedde
 
 # Hardware Fundamentals
 
-* [Microprocessor ( $\mu$ P )](https://en.wikipedia.org/wiki/Microprocessor) - Programmable semiconductor electronic device that comprises of a Central Processing Unit (CPU)
+* [Microprocessor](https://en.wikipedia.org/wiki/Microprocessor) ($\mu$ P) - Programmable semiconductor electronic device that comprises of a Central Processing Unit (CPU)
     * Examples:
         * Earlist known - Intel 4004, Texas Instruments' TMS1000
         * More examples - Intel 8086, Texas Instruments AM62x Sitara MPU
 
-* [Microcontroller ( $\mu$ C )](https://en.wikipedia.org/wiki/Microcontroller) - Comprises of Microprocessor, memory, I/O Ports and Peripherals in an Integrated Circuit (IC).
+* [Microcontroller](https://en.wikipedia.org/wiki/Microcontroller) ($\mu$ C) - Comprises of Microprocessor, memory, I/O Ports and Peripherals in an Integrated Circuit (IC).
     * Examples: Intel 8051, Texas Instruments AM263x Sitara MCU
 
 * [System on Chip (SoC)](https://en.wikipedia.org/wiki/System_on_a_chip) - Combines various components of a computer system in a single IC chip.
@@ -30,6 +30,12 @@ Technical Systems that are built on a Hardware and Software are likely **Embedde
 * [System on Module (SoM)](https://en.wikipedia.org/wiki/System_on_module) - Combines several computer system components on a electronic module or circuit board in simpler words.
 
 ### Architecture:
+
+Computer Architecture refers to those attributes of a system that have a direct impact on the logical execution of a program. Computer organization refers to the operational units and their interconnections that realize the architectural specifications. $^{[2]}$
+
+#### Instruction Set Architecture:
+
+[Instruction Set Architecture](https://en.wikipedia.org/wiki/Instruction_set_architecture) is commonly classified by its architectural complexity as:
 
 * [Reduced Instruction Set Computing (RISC)](https://en.wikipedia.org/wiki/Reduced_instruction_set_computer)
     * Example: ARM architecture
@@ -55,8 +61,18 @@ A core is an individual processing unit on a processor. Based on the number of c
 Clock signal is used for synchronization of a processor execution.
 Clock Sources can be a crystal or oscillator circuit.
 
-Peripherals are Input-Output (I/O) devices.
-<!-- Addition: Various peripherals like UART, SPI, I2C, IPC, DMA, GPIO, ADC, DAC, Timer. -->
+Peripherals are Input-Output (I/O) devices which can be utilised by any processor.
+Various peripherals are available to facilitate specific purposes:
+* [Analog to Digital Converter (ADC)](https://en.wikipedia.org/wiki/Analog-to-digital_converter)
+* [Digital to Analog Converter (DAC)](https://en.wikipedia.org/wiki/Digital-to-analog_converter)
+* [Direct Memory Access (DMA)](https://en.wikipedia.org/wiki/Direct_memory_access)
+* [General Purpose I/O (GPIO)](https://en.wikipedia.org/wiki/General-purpose_input/output)
+* [Inter-Integrated Circuit (I2C)](https://en.wikipedia.org/wiki/I%C2%B2C)
+* [Inter Process Communication (IPC)](https://en.wikipedia.org/wiki/Inter-process_communication)
+* [Pulse Width Modulation (PWM)](https://en.wikipedia.org/wiki/Pulse-width_modulation)
+* [Serial Peripheral Interface (SPI)](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
+* [Universal Synchronous Asynchronous Receiver-Transmitter (USART)](https://en.wikipedia.org/wiki/Universal_synchronous_and_asynchronous_receiver-transmitter)
+* Timers
 
 # Software Fundamentals
 
@@ -68,7 +84,8 @@ Commonly used languages to develop an Embedded Software are Assembly, C and C++.
 | C | Low level language | Not as close as Assembly |
 | C++ | Classes and Exception Handling features over C | Object Oriented Programming concepts to be learnt |
 
-Linker is a utility program that combines one or more files containing object code from separately compiled program modules into a single file containing loadable or executable code. Loader is a program routine that copies an executable program into memory for execution. $^{[2]}$
+Linker is a utility program that combines one or more files containing object code from separately compiled program modules into a single file containing loadable or executable code. Loader is a program routine that copies an executable program into memory for execution. $^{[2]}$ 
+Many Embedded Linkers create an output *.map file that lists placement of each segment in memory, also including the addresses of global data and public functions.
 
 Development can be either Baremetal (also known as No RTOS) or RTOS.
 
@@ -94,6 +111,7 @@ In case of Embedded software development, the device for which development is pe
 * Processor Datasheet
 * Register Addendum
 * Hardware User's Guide
+* CPU and Instruction Set (Assembly level)
 
 ## Some References
 
@@ -102,4 +120,4 @@ In case of Embedded software development, the device for which development is pe
 
 # Disclaimer
 
-This blog post is only meant to document the understanding of the author, [Harshit Gupta](https://github.com/Git-Harshit) and is not meant to reserve ownership level rights to the published content. Information provided above has been studied and confirmed from the rest of the information over internet for validation, yet any user of the above information may validate it for assuring its correctness. Though the content has been documented on own words, any overlap with any other source shall not be considered as an attempt to plagiarize from any source.
+This blog post is only meant to document the understanding of the author, [Harshit Gupta](https://github.com/Git-Harshit), and is not meant to reserve ownership level rights to the published content. Information provided above has been studied and confirmed from the existing information over internet and reference materials for validation, yet any user of the above information may validate it for assuring its correctness. Though the content has been documented on own words, any overlap with any other source shall not be considered as an attempt to plagiarize from any source.
