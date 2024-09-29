@@ -85,17 +85,20 @@ Commonly used languages to develop an Embedded Software are Assembly, C and C++.
 | C++ | Classes and Exception Handling features over C | Object Oriented Programming concepts to be learnt |
 
 Linker is a utility program that combines one or more files containing object code from separately compiled program modules into a single file containing loadable or executable code. Loader is a program routine that copies an executable program into memory for execution. $^{[2]}$ 
-Many Embedded Linkers create an output *.map file that lists placement of each segment in memory, also including the addresses of global data and public functions.
+Many Embedded Linkers create an output *.map file that lists placement of each segment in memory, also including the addresses of global data and public functions. Linker for embedded systems is also called as a *locator*.
 
 Development can be either Baremetal (also known as No RTOS) or RTOS.
 
-In case of Embedded software development, the device for which development is performed (the processor getting burned with the program output) is termed as *target* machine and the device on which this preparation can takes place is termed as a *host* machine.
+In case of Embedded software development, the device for which development is performed (the processor getting burned with the program output) is termed as *target* machine and the device on which this preparation can takes place is termed as a *host* machine (host is also called as *workstation*).
 
 # Debugging Tools
 
 * Logic Analyzer
 * Probe - JTAG and Pin Connections
 * Oscilloscope
+* Multimeter
+* Instruction Set Simulator
+* In-Circuit Emulator (ICE)
 * `assert` and logs
 
 # Did You Know?
