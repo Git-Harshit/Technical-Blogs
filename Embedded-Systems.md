@@ -84,12 +84,25 @@ Commonly used languages to develop an Embedded Software are Assembly, C and C++.
 | C | Low level language | Not as close as Assembly |
 | C++ | Classes and Exception Handling features over C | Object Oriented Programming concepts to be learnt |
 
+Firmware is a low-level software that is tightly coupled with the hardware. It provides basic control, initialization, and functionality for the device.
+
+Device Driver is a low-level software component that controls or communicates to a particular hardware device. It performs low-level hardware instructions.
+
 Linker is a utility program that combines one or more files containing object code from separately compiled program modules into a single file containing loadable or executable code. Loader is a program routine that copies an executable program into memory for execution. $^{[2]}$ 
 Many Embedded Linkers create an output *.map file that lists placement of each segment in memory, also including the addresses of global data and public functions. Linker for embedded systems is also called as a *locator*.
 
-Development can be either Baremetal (also known as No RTOS) or RTOS.
+Development can be either Baremetal (also known as No RTOS) or Operating-System based (such as RTOS, Linux).
 
 In case of Embedded software development, the device for which development is performed (the processor getting burned with the program output) is termed as *target* machine and the device on which this preparation can takes place is termed as a *host* machine (host is also called as *workstation*).
+
+[Executable and Linkable Format (ELF)](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) is a standard output file format used to store executables, object code, shared libraries, and core dumps. ELF contains structured format of multiple sections, such as code (text section), data, and symbol tables, along with header tables and metadata about the program's structure and execution environment. ELF often include Debug Information (like symbols, line numbers, function) and Relocation Information (fixing addresses at runtime, which allows programs to be loaded dynamically at different memory addresses).
+A Raw Flashable Binary is a simple binary file that contains only the raw machine code to be executed by the target processor. It strips away all the metadata, debug information, and section headers present in an ELF file, leaving simply the compiled program.
+
+Loading the Binary or hex file onto the Embedded System processor can be done using a programmer/debugger or flashing tool. Tools like a USB Programmer (such as ST-Link, J-Link), a bootloader if the system supports (example: using a UART or USB connection), or a dedicated flashing utility (such as openocd for ARM-based systems, avrdude for AVR microcontrollers) can be used.
+
+## Bare-Metal Programming
+
+Bare-Metal is a low-level programming done to interface the Hardware directly. Bare-Metal Programming instructions directly runs on the Hardware Processor & Memory, without any abstraction layer involved. As Instructions are carried out directly on Hardware Registers, Bare-Metal is also known as Register Level Programming. Primary references are device datasheet, Technical Brief Reference and header files.
 
 # Debugging Tools
 
@@ -100,6 +113,35 @@ In case of Embedded software development, the device for which development is pe
 * Instruction Set Simulator
 * In-Circuit Emulator (ICE)
 * `assert` and logs
+
+# Miscellaneous content
+
+A digital signal processor (DSP) is a specialized microprocessor designed specifically for processing digital signals in real-time. (Good for multimedia including Audio, Image, Video). DSP's ability to perform mathematical operations very quickly lets them process large data efficiently.
+
+Hypervisor, also known as a Virtual Machine Monitor (VMM), is a software or hardware that creates or manages virtual machines (VMs) by allowing single hardware host sharing. They allocate physical resources as CPU, memory, storage among VMs and keep them isolated from one another.
+- Type 1 Hypervisor (Bare-Metal Hypervisor):
+    - Runs directly on the host's hardware
+    - Examples: Xen, VMware ESXi, Microsoft Hyper-V
+- Type 2 Hypervisor (Hosted Hypervisor):
+    - Runs on top of an Operating System
+    - Easier to setup and manage, but offers slightly lower performance than Type 1.
+    - Examples: QEMU, Oracle VM VirtualBox, VMware workstation.
+
+In Serial Communication, data is transmitted one bit at a time over a single-channel or wire. This method is efficient for long-distance communication as it minimizes the number of wires and has fewer chances of error. Example: UART, SPI, I2C, USB.
+
+In Parallel Communication, multiple bits are transmitted simultaneously over multiple channels or wires. This method is often used for short distance communication where speed is critical. It has faster data transfer rates due to simultaneous transmission of multiple bits but requires more wires that makes it complex and expensive and it is more prone to cross-talk and signal degradation/noise over long distances.
+
+World Before main(): Reset Vector, Hardware Init, Startup Code, call to `main()`
+
+Reset instruction clears state and brings the execution back to a starting point.
+- Warm Reset (Soft Reset): It is initiated without completely cutting off power. This resets software components but may retain RAM memory. It doesn't reinitialize every physical circuit but clears the running state. This is faster than cold reset.
+- Cold Reset (Hard Reset): It resets all components of a device, including registers and memory. This occurs when the system is power-cycled or restarted manually.
+
+Types of resets for system reliability and fault-tolerant machanisms:
+- Power-On Reset (POR): This feature ensures the device starts in a known state when power is first applied. It resets the system when supply voltage rises above a threshold voltage.
+- Brown-Out Reset (BOR): This is a safeguard that resets the microcontoller when the supply voltage drops below a specific level. This prevents the device from operating unpredictably due to insufficient voltage.
+- Watchdog Timer Reset: A Hadware timer that resets the microcontroller if the software fails to reset (also called as kick, service) the timer within a predefined period.
+- Manual Reset: This is initiated by a user, typically using a reset button on the device or via a call to the software reset API.
 
 # Did You Know?
 
@@ -120,6 +162,8 @@ In case of Embedded software development, the device for which development is pe
 
 1. An Embedded Software Primer by David E. Simon, Pearson Education Publications, ISBN - 978-81-7758-154-6
 2. Computer Organization and Architecture by William Stallings, Pearson India Education Services Publications, ISBN - 978-93-560-6159-0
+3. [Intro to Bare Metal Programming - Episode 1: How to Get Started - Microchip Developer Help - YouTube](https://www.youtube.com/watch?v=_73WcZMLHzo&list=PLtQdQmNK_0DQ8KGcZ1BOPv-3RDPvtqJ1H)
+4. [ARM Compiler for Embedded Reference Guide - ARM Developer](https://developer.arm.com/documentation/101754/0623)
 
 # Disclaimer
 
