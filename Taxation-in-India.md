@@ -22,4 +22,4 @@
 
 ## Disclaimer
 
-The information provided is on the basis of personal learnings on the Tax system in India, kept updated until the last modification date. Kindly check the Income Tax Portal for the latest information related to taxes.
+The information provided is on the basis of personal learnings on the Tax system in India, kept updated until the last modification date. Kindly check the [Income Tax Portal](https://www.incometax.gov.in/iec/foportal/) for the latest information related to taxes.

@@ -192,7 +192,3 @@ Types of resets for system reliability and fault-tolerant machanisms:
 2. Computer Organization and Architecture by William Stallings, Pearson India Education Services Publications, ISBN - 978-93-560-6159-0
 3. [Intro to Bare Metal Programming - Episode 1: How to Get Started - Microchip Developer Help - YouTube](https://www.youtube.com/watch?v=_73WcZMLHzo&list=PLtQdQmNK_0DQ8KGcZ1BOPv-3RDPvtqJ1H)
 4. [ARM Compiler for Embedded Reference Guide - ARM Developer](https://developer.arm.com/documentation/101754/0623)
-
-# Disclaimer
-
-This blog post is only meant to document the understanding of the author, [Harshit Gupta](https://github.com/Git-Harshit), and is not meant to reserve ownership level rights to the published content. Information provided above has been studied and confirmed from the existing information over internet and reference materials for validation, yet any user of the above information may validate it for assuring its correctness. Though the content has been documented on own words, any overlap with any other source shall not be considered as an attempt to plagiarize from any source.
