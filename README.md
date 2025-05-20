@@ -1,12 +1,13 @@
 # Technical-Blogs
 
 Welcome to the technical blogs page. This is a limited but selected collection of specific technical content which may be worth checking for understanding something new or revising the known.
-Content within here is highly related to software or hardware or embedded domains.
+Content within here is specific to software or hardware or embedded domains, with a few exceptions.
 
 ## List of Contents
 
-1. [Getting started with Embedded Systems](./Embedded-Systems.md)
-2. [Taxation in India](./Taxation-in-India.md)
+1. [Competitive Programming](./Competitive-Programming-Experience.md)
+2. [Getting started with Embedded Systems](./Embedded-Systems.md)
+3. [Taxation in India](./Taxation-in-India.md)
 
 # Disclaimer
 
