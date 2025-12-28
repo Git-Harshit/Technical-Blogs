@@ -5,7 +5,7 @@ Content within here is specific to software or hardware or embedded domains, wit
 
 ## List of Contents
 
-1. [ARM](./ARM.md)
+1. [ARM](./ARM%20Architecture/ARM.md)
 2. [Competitive Programming](./Competitive-Programming-Experience.md)
 3. [Getting started with Embedded Systems](./Embedded-Systems.md)
 4. [RISC-V](./RISC-V.md)

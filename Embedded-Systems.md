@@ -38,7 +38,7 @@ Computer Architecture refers to those attributes of a system that have a direct 
 [Instruction Set Architecture](https://en.wikipedia.org/wiki/Instruction_set_architecture) is commonly classified by its architectural complexity as:
 
 * [Reduced Instruction Set Computing (RISC)](https://en.wikipedia.org/wiki/Reduced_instruction_set_computer)
-    * Example: ARM architecture, RISC-V architecture
+    * Example: [ARM architecture](./ARM%20Architecture/ARM.md), [RISC-V architecture](./RISC-V.md)
 * [Complex Instruction Set Computing (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer)
     * Example: Intel x86 architecture
 
@@ -79,6 +79,7 @@ Various peripherals are available to facilitate specific purposes:
 * Timers (Watchdog (WDG) Timer)
 
 Some examples of Industrial Protocols are given below:
+
 * Fieldbus Protocols: Designed for real-time distributed control, connecting sensors, actuators, and controllers on factory floors.
     * [Modbus](https://en.wikipedia.org/wiki/Modbus) - Serial Communication Protocol
     * [Process Field Bus (Profibus)](https://en.wikipedia.org/wiki/Profibus)
@@ -86,6 +87,12 @@ Some examples of Industrial Protocols are given below:
     * [Ethernet for Control Automation Technology (EtherCAT)](https://en.wikipedia.org/wiki/EtherCAT) - Reference: https://www.beckhoff.com/en-en/products/i-o/ethercat/
     * [Process Field Net (PROFINET)](https://en.wikipedia.org/wiki/Profinet)
     * [Time-Sensitive Networking (TSN)](https://en.wikipedia.org/wiki/Time-Sensitive_Networking)
+
+### Types of Input-Output of peripherals
+
+**Memory-mapped I/O**: Memory-mapped I/O (MMIO) exposes peripheral registers and buffers at fixed addresses in the processor's normal memory space (usually RAM) so software accesses devices with ordinary load/store instructions (or pointer dereferences in C). This lets peripherals be treated like regular memory, but requires careful handling of caching, ordering, alignment, and volatile semantics (and often memory barriers) so reads/writes reach the device and occur in the correct order.
+
+**Port-mapped (isolated) I/O**: Port-mapped I/O uses a separate I/O address space and special CPU instructions (e.g., IN/OUT on x86) to access device ports rather than the normal memory bus. It isolates peripheral accesses from the regular address space and can simplify hardware decoding, but requires explicit port operations in software, provides a smaller address range on some architectures, and is less portable across ISAs that do not support isolated I/O. There's smaller addressable range of devices compared to MMIO.
 
 Different categories of peripherals are given below:
 
@@ -119,6 +126,18 @@ Some Flash Memory supports Read While Write (RWW), while others support No Read 
 ### Microcontroller
 
 Example: Clock setting, Power Mode Configuration (could be taken care by Firmware), Peripheral Initialization control.
+
+## Reset
+
+Reset instruction clears state and brings the execution back to a starting point.
+- Warm Reset (Soft Reset): It is initiated without completely cutting off power. This resets software components but may retain RAM memory. It doesn't reinitialize every physical circuit but clears the running state. This is faster than cold reset.
+- Cold Reset (Hard Reset): It resets all components of a device, including registers and memory. This occurs when the system is power-cycled or restarted manually.
+
+Types of resets for system reliability and fault-tolerant machanisms:
+- Power-On Reset (POR): This feature ensures the device starts in a known state when power is first applied. It resets the system when supply voltage rises above a threshold voltage.
+- Brown-Out Reset (BOR): This is a safeguard that resets the microcontoller when the supply voltage drops below a specific level. This prevents the device from operating unpredictably due to insufficient voltage.
+- Watchdog Timer Reset: A Hadware timer that resets the microcontroller if the software fails to reset (also called as kick, service) the timer within a predefined period.
+- Manual Reset: This is initiated by a user, typically using a reset button on the device or via a call to the software reset API.
 
 # Software Fundamentals
 
@@ -208,12 +227,15 @@ World Before main() execution:
 
 ## Operating System based Programming
 
-Operating Systems provide features like scheduling and managing resources with context.
+Operating Systems provide features like scheduling and managing resources with context. Several Operating Systems have an embedded flavor of them, such as Windows IoT, Embedded Linux.
 
 ### Real-Time Operating Systems
 
 Systems with a deterministic time bound for operations.
 RTOS is a scheduler operating system.
+
+- Hard vs soft real-time: Hard means missing a deadline is unacceptable (example: Pacemaker), soft means occasional misses are tolerable (example: multimedia streaming).
+- Determinism means predictable upper bounds (Worst-Case Execution Time (WCET), latency), not necessarily high throughput.
 
 Key components:
 - Tasks and Co-routines
@@ -235,7 +257,30 @@ Key components:
 - Asymmetric Multi-processing (AMP): Each core runs an independent OS instance or pinned bare-metal tasks with explicit inter-core communication and no OS-level task migration.
 - Symmetric Multi-processing (SMP): A single RTOS kernel schedules and load-balances tasks across multiple cores with shared memory, allowing dynamic task migration and requiring SMP-safe drivers and synchronization.
 
-Blackberry QNX Neutrino RTOS also offers Bound Multi-processing (BMP), which is said to be an improvement over the standard SMP.
+[Blackberry QNX Neutrino RTOS](https://prod-blackberry-qnx2.adobecqms.net/en/software-solutions/embedded-software/qnx-neutrino-rtos) also offers Bound Multi-processing (BMP), which is said to be an improvement over the standard SMP.
+
+[Yocto](https://www.yoctoproject.org/) is an open-source Linux-like RTOS.
+
+### [Embedded Linux](./Embedded-Linux-Development.md)
+
+Linux is available for Embedded Systems as well.
+
+Hypervisor, also known as a Virtual Machine Monitor (VMM), is a software or hardware that creates or manages virtual machines (VMs) by allowing single hardware host sharing. They allocate physical resources as CPU, memory, storage among VMs and keep them isolated from one another.
+- Type 1 Hypervisor (Bare-Metal Hypervisor):
+    - Runs directly on the host's hardware
+    - Examples: Xen, VMware ESXi, Microsoft Hyper-V
+- Type 2 Hypervisor (Hosted Hypervisor):
+    - Runs on top of an Operating System
+    - Easier to setup and manage, but offers slightly lower performance than Type 1.
+    - Examples: QEMU, Oracle VM VirtualBox, VMware workstation.
+
+## Simulator and Emulator
+
+Simulator mimics the behaviour of a hardware through software.
+Example: Keil µVision with ARM Simulator, Proteus VSM, Gem5, System C as a programming language for it.
+
+Emulator provides a full hardware behaviour, acts as a complete replacement of the original hardware. Available as by programming the design on FPGA boards. In-Circuit Emulator (ICE) are also available.
+Example: Cadence Palladium, Synopsys ZeBu, QEMU, Renode, Simics.
 
 ## Safety - Automobile Software Development
 
@@ -243,7 +288,15 @@ Blackberry QNX Neutrino RTOS also offers Bound Multi-processing (BMP), which is 
 
 ### Safety Qualification
 
-Automotive SPICE, [AUTomotive Open System ARchitecture (AUTOSAR)](https://autosar.org/), Functional Safety Qualification in compliance with the ISO 26262:2018 (Automobile Safety of Road Vehicles) and IEC 61508:2010 Safety standards.
+Automotive SPICE, [AUTomotive Open System ARchitecture (AUTOSAR)](https://autosar.org/), Functional Safety Qualification in compliance with the [ISO 26262:2018](https://en.wikipedia.org/wiki/ISO_26262) (Automobile Safety of Road Vehicles) and [IEC 61508:2010](https://en.wikipedia.org/wiki/IEC_61508) (Functional safety of electrical/electronic/programmable electronic safety-related systems (E/E/PE or E/E/PES)) Safety standards.
+
+Generally, the development is divided into 4-5 phases: Assess, Plan, Implement, Validate, Release and Sustain. Safety Qualification is done at all of the stages.
+
+Several tools exist to assess with the process, such as:
+- Static Code Analysis: Analysis of source code without executing it (but building/compilation).
+    - Example Tools: Perforce Klocwork, Clang-Tidy
+- Dynamic Code Analysis: Analysis of Code Coverage metrics by execution.
+    - Example Tools: LDRA Tool suite, gcov (bundled with GCC)
 
 # Debugging Tools
 
@@ -285,25 +338,6 @@ Several tools exist to help find the symbols of an ELF file. In Linux, the commo
 # Miscellaneous content
 
 A digital signal processor (DSP) is a specialized microprocessor designed specifically for processing digital signals in real-time. (Good for multimedia including Audio, Image, Video). DSP's ability to perform mathematical operations very quickly lets them process large data efficiently.
-
-Hypervisor, also known as a Virtual Machine Monitor (VMM), is a software or hardware that creates or manages virtual machines (VMs) by allowing single hardware host sharing. They allocate physical resources as CPU, memory, storage among VMs and keep them isolated from one another.
-- Type 1 Hypervisor (Bare-Metal Hypervisor):
-    - Runs directly on the host's hardware
-    - Examples: Xen, VMware ESXi, Microsoft Hyper-V
-- Type 2 Hypervisor (Hosted Hypervisor):
-    - Runs on top of an Operating System
-    - Easier to setup and manage, but offers slightly lower performance than Type 1.
-    - Examples: QEMU, Oracle VM VirtualBox, VMware workstation.
-
-Reset instruction clears state and brings the execution back to a starting point.
-- Warm Reset (Soft Reset): It is initiated without completely cutting off power. This resets software components but may retain RAM memory. It doesn't reinitialize every physical circuit but clears the running state. This is faster than cold reset.
-- Cold Reset (Hard Reset): It resets all components of a device, including registers and memory. This occurs when the system is power-cycled or restarted manually.
-
-Types of resets for system reliability and fault-tolerant machanisms:
-- Power-On Reset (POR): This feature ensures the device starts in a known state when power is first applied. It resets the system when supply voltage rises above a threshold voltage.
-- Brown-Out Reset (BOR): This is a safeguard that resets the microcontoller when the supply voltage drops below a specific level. This prevents the device from operating unpredictably due to insufficient voltage.
-- Watchdog Timer Reset: A Hadware timer that resets the microcontroller if the software fails to reset (also called as kick, service) the timer within a predefined period.
-- Manual Reset: This is initiated by a user, typically using a reset button on the device or via a call to the software reset API.
 
 Serial Network Topologies:
 1. Point-to-Point: Here, exactly two devices are wired together.
