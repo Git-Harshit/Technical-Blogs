@@ -67,6 +67,171 @@
 * Income Tax Rules: https://incometaxindia.gov.in/Pages/rules/income-tax-rules-1962.aspx
 * Various forms as applicable under various sections: https://incometaxindia.gov.in/Pages/downloads/most-used-forms.aspx
 
+## ITR-2 Questions:
+
+Q. Are you filing the income tax return for any of the following reasons?
+    - Taxable income is more than basic exemption limit
+    - Filing return of income due to fulfilling any one or more below mentioned conditions as per Seventh Proviso to section 139(1):
+        - Deposited amount or aggregate of amounts exceeding ₹ 1 crore in one or more current accounts during the previous year
+        - Incurred expenditure of an amount or aggregate of amount exceeding ₹ 2 lakhs for travel to a foreign country for yourself or for any other person;
+        - Incurred expenditure of amount or aggregate of amount exceeding ₹ 1 lakh on consumption of electricity during the previous year
+        - Are you required to file a return as per other conditions prescribed under clause (iv) of seventh proviso to section 139(1)
+    - Others
+Q. Schedule selection (tick as appropriate)
+    - General:
+        - Part A - General Personal Information (Mandatory)
+            - Details of personal information and filing status
+        - Schedule 5A
+            - Information regarding apportionment of income between spouses governed by Portuguese Civil Code
+    - Income
+        - Schedule Salary
+            - Details of Income from Salary
+        - Schedule House Property
+            - Details of Income from House Property (Please Refer Instructions)
+        - Schedule Capital Gains
+            - Details of capital asset transferred
+        - Schedule 112A
+            - From sale of equity share in a company or unit of equity oriented fund or unit of a business trust on which STT is paid under section 112A
+        - Schedule 115AD(1)(iii) proviso
+            - For NON-RESIDENTS - From sale of equity share in a company or unit of equity oriented fund or unit of a business trust on which STT is paid under section 112A rws 115AD(1)(b)(iii) proviso
+        - Schedule VDA
+            - Income from transfer of Virtual Digital Assets (Note: Details of every transaction are to be filled, wherein every ‘transfer’ is a transaction)
+        - Schedule Other Sources
+            - Income from other sources
+        - Schedule SPI
+            - Income of specified persons (spouse, minor child etc.) included in income of the assessee as per Section 64
+        - Schedule SI (Mandatory)
+            - Income chargeable to tax at special rates
+        - Schedule EI
+            - Details of Exempt Income (Income not to be included in total income or not chargeable to tax)
+        - Schedule PTI
+            - Pass Through Income details from business trust or investment fund as per section 115U, 115UA, 115UB
+        - Schedule FSI
+            - Details of Income from outside India and tax relief (Available only in case of resident)
+        - Schedule TR
+            - Summary of tax relief claimed for taxes paid outside India (Available in case of resident)
+    - Deduction
+        - Schedule 80G
+            - Details of donations entitled for deduction under section 80G
+        - Schedule 80GGA
+            - Details of donations for scientific research or rural development
+        - Schedule 80D
+            - Deduction under section 80D
+        - Schedule 80U
+            - Details of deduction in case of a person with disability
+        - Schedule VI-A (Mandatory)
+            - Deductions under Chapter VI-A
+        - Schedule 80DD
+            - Details of deduction in respect of maintenance including medical treatment of a dependent who is a person with disability
+        - Schedule 80GGC
+            - Details of contribution made to political parties
+        - Schedule 80C
+            - Deduction in respect of life insurance premia, deferred annuity, contributions to provident fund etc. under section 80C
+        - Schedule 80E
+            - Interest on loan taken for higher education
+        - Schedule 80EE
+            - Interest on loan taken for residential house property
+        - Schedule 80EEA
+            - Deduction in respect of interest on loan taken for certain house property
+        - Schedule 80EEB
+            - Deduction in respect of interest Paid on purchase of electric vehicle
+    - Tax
+        - Part B - TI (Mandatory)
+            - Computation of total income
+        - Part B - TTI (Mandatory)
+            - Computation of tax liability on total income
+        - Tax Paid (Mandatory)
+            - Details of Tax Deducted at Source from Salary, Tax collected at Source, payments of Self-Assessment Tax and Advance Tax Note : In the TDS schedule, wherever possible, head of income has been pre-filled based on TDS sections. If the income is being offered under a different head, the income head entries need to be changed accordingly
+        - Tax deferred on ESOP
+            - Information related to Tax deferred - relatable to income on perquisites referred in section 17(2)(vi) received from employer, being an eligible start-up referred to in section 80-IAC
+    - Others
+        - Schedule CYLA (Mandatory)
+            - Details of Income after set-off of current years losses
+        - Schedule BFLA (Mandatory)
+            - Details of Income after Set off of Brought Forward Losses of earlier years
+        - Schedule CFL (Mandatory)
+            - Details of Losses to be carried forward to future years
+        - Schedule FA
+            - Details of Foreign Assets and Income from any source outside India
+        - Schedule AMT
+            - Computation of Alternate Minimum Tax payable under section 115JD
+        - Schedule AMTC
+            - Computation of tax credit under section 115JC
+        - Schedule AL
+            - Assets and Liabilities at the end of the year (other than those included in Part A- BS) (applicable in a case where total income exceeds Rs. 1 Crore)
+
+- Leave Encashment reporting
+    - Under Schedule Salary, add in
+        - 1. Gross Salary by Employer under 1.a. Salary as per section 17(1).
+            - Nature of Salary: Leave Encashment
+        - 3. Less: Allowances to the extent exempt u/s 10
+            - Sec 10(10AA)-Earned Leave Encashment
+
+### Questions following Schedule selection
+
+- Do you wish to exercise the option u/s 115BAC(6) of Opting out of new tax regime?
+- Are you eligible to claim exemption in respect of Allowances referred in sub-clauses (a) to (c) of sub-rule (1) in Rule 2BB?
+- Are you eligible to claim exemption in respect of Transport allowance granted to certain physically handicapped assessee?
+- Are you eligible to claim any other exemption from salary income? If yes:
+    - Sec 10(7) - Allowances or perquisites paid or allowed as such outside India by the Government to a citizen of India for rendering services outside India
+    - Sec 10(10) - Death-cum-retirement gratuity received
+    - Sec 10(6) - Remuneration received as an official, by whatever name called, of an embassy, high commission etc
+    - Sec 10(10B) - First proviso - Compensation limit notified by CG in the Official Gazette
+    - Sec 10(10C) - Amount received on voluntary retirement or termination of service
+    - Sec 10(10A) - Commuted value of pension received
+    - Sec 10(10AA) - Earned leave encashment
+    - Sec 10(10B) - Second proviso - Compensation under scheme approved by the Central Government
+    - Sec 10(10CC) - Tax paid by employer on non-monetary perquisite
+
+#### Schedule Return Summary (14 parts)
+
+- Part A - General Personal Information (Mandatory)
+    - Details of personal information and filing status
+- Schedule Salary
+    - Details of Income from Salary
+- Schedule House Property
+    - Details of Income from House Property (Please Refer Instructions)
+- Schedule Other Sources
+    - Income from other sources
+- Schedule CYLA (Mandatory)
+    - Details of Income after set-off of current years losses
+- Schedule BFLA (Mandatory)
+    - Details of Income after Set off of Brought Forward Losses of earlier years
+- Schedule CFL (Mandatory)
+    - Details of Losses to be carried forward to future years
+- Schedule SI (Mandatory)
+    - Income chargeable to tax at special rates
+- Schedule VI-A (Mandatory)
+    - Deductions under Chapter VI-A
+- Schedule AMTC
+    - Computation of tax credit under section 115JC
+- Part B - TI (Mandatory)
+    - Computation of total income
+- Tax Paid (Mandatory)
+    - Details of Tax Deducted at Source from Salary, Tax collected at Source, payments of Self-Assessment Tax and Advance Tax. Note: under a different head, the income head entries need to be changed accordingly
+ESOP
+- Tax deferred on ESOP
+    - Information related to Tax deferred - relatable to income on perquisites referred in section 17(2)(vi) received from employer, Part B TTI
+- Part B - TTI(Mandatory)
+    - Computation of tax liability on total income
+
+- Under "Schedule Other Sources" above, in "Information about accrual/receipt of income from Other Sources", "	
+Dividend Income referred in Sl.no. 1a (i)" is for Domestic Dividends, and "	
+Dividend Income referred in Sl. No. 1a (iii)" is for Foreign Dividends.
+
+#### Details asked on Schedule Foreign Assets (FA)
+
+- A1. Details of Foreign Depository Accounts held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025
+- A2. Details of Foreign Custodial Accounts held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025
+- A3. Details of Foreign Equity and Debt Interest held (including any beneficial interest) in any entity at any time during the calendar year ending as on 31st December, 2025
+- A4. Details of Foreign Cash Value Insurance Contract or Annuity Contract held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025
+- B. Details of Financial Interest in any Entity held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025
+- C. Details of Immovable Property held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025
+- D. Details of any other Capital Asset held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025
+- E. Details of account(s) in which you have signing authority held (including any beneficial interest) at any time during the calendar year ending as on 31st December, 2025 and which has not been included in A to D above
+- F. Details of trusts, created under the laws of a country outside India, in which you are a trustee, beneficiary or settlor
+- G. Details of any other income derived from any source outside India which is not included in,- (i) items A to F above and, (ii) income under the head business or profession
+
 ## Taxation on Stocks
 
 * Taxed on vesting and sale.
@@ -122,6 +287,29 @@
         * RSU vesting and release report: Shows The exact date your shares wasted the market value on those dates and how many shares were sold to cover taxes.
         * Account Statement/Ledger (Jan 1 to Dec 31): Essential for calculating peak balance and your closing balance as of December 31.
         * Financial / Tax Summary report: Lists any dividends received or capital gains from shares sold.
+* Since ITR is filed in INR, conversion from USD to INR must use the USD/INR SBI Telegraphic Transfer Buying Rates (TTBR) conversion rates.
+
+### Form 67
+
+Self-declared form in ITR Portal for claiming Foreign Tax Credit (FTC).
+
+e-File -> Income Tax Forms -> File Income Tax Forms
+
+For response to "Credit claimed under Section 90/90A" (Article No. of Double Taxation Avoidance Agreements):
+    Section 90 → FTC claimed under a DTAA (India–US, India–UK, etc.).
+    Section 90A → FTC claimed under agreements with specified associations (rare).
+    Section 91 → FTC claimed where no DTAA exists (unilateral relief).
+
+## Revising a Filed ITR
+
+An ITR filed (validated, verified, e-verified) will have the corresponding acknowledgement number.
+
+To revise it, start filing a new ITR by selecting status (Individual, HUF, others), selecting ITR form, then in Return Summary -> Part A - General Person Information, in Filing Status, choose filed u/s 139(5) Revised- Return revised after filing original return. Next, provide the original receipt number of original return and the date of filing of original return.
+
+## References
+
+- Assisted Filing: https://www.incometax.gov.in/iec/foportal/help/assissted-filing
+- Sections of the IT Act: https://www.incometaxindia.gov.in/income-tax-act
 
 ## Disclaimer
 
